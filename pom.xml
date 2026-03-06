@@ -1,68 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
   <modelVersion>4.0.0</modelVersion>
 
+  <!-- Project Coordinates -->
   <groupId>com.shrini.app</groupId>
   <artifactId>shrini-api</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0-RELEASE</version>
   <packaging>war</packaging>
 
   <name>shrini-api Maven Webapp</name>
-  <!-- FIXME change it to the project's website -->
-  <!-- this is an extra comment -->
   <url>http://www.example.com</url>
 
+
+  <!-- Project Properties -->
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>8</maven.compiler.source>
     <maven.compiler.target>8</maven.compiler.target>
+     <sonar.host.url>http://3.110.223.122:9000</sonar.host.url>
+      <sonar.login>4beb5be7b3abc836e97f458022ee1159472339bb</sonar.login>
   </properties>
 
+  <!-- WHERE DEPENDENCIES ARE DOWNLOADED FROM -->
+  <!-- <repositories>
+
+    <repository>
+      <id>company-libs</id>
+      <url>http://13.232.229.210:8081/repository/company-libs/</url>
+    </repository>
+
+  </repositories> -->
+
+  <!-- PROJECT DEPENDENCIES -->
   <dependencies>
+
+    <!-- Test Dependency -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.13.1</version>
       <scope>test</scope>
     </dependency>
+
+    <!-- Shared Library from Nexus (company-libs) -->
+    <!-- <dependency>
+      <groupId>com.mycompany.app</groupId>
+      <artifactId>my-app</artifactId>
+      <version>1.0-20260228.170830-1</version>
+    </dependency> -->
+
   </dependencies>
 
+  <!-- WHERE ARTIFACTS ARE UPLOADED -->
+  <!-- <distributionManagement>
+
+   
+    <repository>
+      <id>company-releases</id>
+      <url>http://13.232.229.210:8081/repository/company-releases/</url>
+    </repository>
+
+   
+    <snapshotRepository>
+      <id>company-snapshots</id>
+      <url>http://13.232.229.210:8081/repository/company-snapshots/</url>
+    </snapshotRepository>
+
+  </distributionManagement> -->
+
+  
   <build>
     <finalName>shrini-api</finalName>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+
+    <pluginManagement>
       <plugins>
+
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.4.0</version>
         </plugin>
-        <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
+
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.3.1</version>
         </plugin>
+
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.13.0</version>
         </plugin>
+
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>3.3.0</version>
         </plugin>
+
         <plugin>
           <artifactId>maven-war-plugin</artifactId>
           <version>3.4.0</version>
         </plugin>
+
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
           <version>3.1.2</version>
         </plugin>
+
         <plugin>
           <artifactId>maven-deploy-plugin</artifactId>
           <version>3.1.2</version>
         </plugin>
+
+        <plugin>
+          <groupId>org.sonarsource.scanner.maven</groupId>
+          <artifactId>sonar-maven-plugin</artifactId>
+          <version>3.10.0.2594</version>
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>
+
 </project>
