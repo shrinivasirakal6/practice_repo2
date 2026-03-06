@@ -22,8 +22,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>8</maven.compiler.source>
     <maven.compiler.target>8</maven.compiler.target>
-     <sonar.host.url>http://3.110.223.122:9000</sonar.host.url>
-      <sonar.login>4beb5be7b3abc836e97f458022ee1159472339bb</sonar.login>
+     
   </properties>
 
   <!-- WHERE DEPENDENCIES ARE DOWNLOADED FROM -->
